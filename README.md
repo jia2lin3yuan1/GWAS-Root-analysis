@@ -1,4 +1,6 @@
 #GWAS-Root-analysis
+![Screen Shot 2023-04-12 at 2 07 58 PM](https://user-images.githubusercontent.com/25964899/234308037-ae056f3a-783c-4be9-9ac7-0affa9e9fbce.png)
+
 
 ### Train two segmentation models:
 	1. Rotate images to ensure: plant is placed as leaf on top, root on bottom. Ruler and the labels are on the bottom-right corner. It helps to simplify the input patterns for the network to learn.
