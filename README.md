@@ -34,17 +34,36 @@
         python step1_preprocess_rotation.py
         ```
     * train network for segmentation of plant / ruler / label
+        ```bash
+        cd network-segment/Network
+        python train.py --config config/config_root_2.json
+        ```
     * run deep-model-1 and zoom-in to crop image
         ```bash
+        python infer_root_2.py --config config/config_root_2.json --model SAVED_TRAIN_MODEL1_PATH 
+        cd ../../
         python step2_segment_ms.py
         ```
     * train network for segmentation of leaf / stem /root
+        ```bash
+        cd network-segment/Network
+        python train.py --config config/config_root_3.json
+        ```
 
 + configuration is setted in 'config.py'
+
 + run inference pipeline on new input:
     ```bash
     python step1_preprocess_rotation.py
+
+    cd network-segment/Network
+    python infer_root_2.py --config config/config_root_2.json --model SAVED_TRAIN_MODEL1_PATH
+    cd ../../
     python step2_segment_ms.py
+
+    cd network-segment/Network
+    python infer_root_3.py --config config/config_root_2.json --model SAVED_TRAIN_MODEL2_PATH
+    cd ../../
     python step3_compute_traits.py
     ```
     
