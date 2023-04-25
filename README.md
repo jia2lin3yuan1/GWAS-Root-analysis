@@ -4,6 +4,8 @@
 
 ### Train two segmentation models:
 	1. Rotate images to ensure: plant is placed as leaf on top, root on bottom. Ruler and the labels are on the bottom-right corner. It helps to simplify the input patterns for the network to learn.
+	![Screen Shot 2023-04-12 at 1 37 07 PM](https://user-images.githubusercontent.com/25964899/234308345-55b40a68-ef83-4933-883c-99822daff135.png)
+
 	2. Segment BG based on color intensity, and then segment the plant, ruler, and label as three isolated connected regions based on their spatial relationship.
 	3. Collect good examples, and train a deeplab-resnet50 model to segment image into BG, plant, Ruler, and Label
 	
