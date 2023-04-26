@@ -27,6 +27,7 @@
 
 
 ## Running script:
++ update the configuration based on the path of input images and the output pathes, including 'config.py', 'network-segment/Network/config/config_root_2.json', and 'network-segment/Network/config/config_root_3.json'.
 
 + training pipeline
     * uniform rotation: 
@@ -50,8 +51,6 @@
         python train.py --config config/config_root_3.json
         ```
 
-+ configuration is setted in 'config.py'
-
 + run inference pipeline on new input:
     ```bash
     python step1_preprocess_rotation.py
@@ -62,7 +61,7 @@
     python step2_segment_ms.py
 
     cd network-segment/Network
-    python infer_root_3.py --config config/config_root_2.json --model SAVED_TRAIN_MODEL2_PATH
+    python infer_root_3.py --config config/config_root_3.json --model SAVED_TRAIN_MODEL2_PATH
     cd ../../
     python step3_compute_traits.py
     ```
